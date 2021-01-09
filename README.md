@@ -4,21 +4,11 @@
 
 ## 查看方式
 
-### 打开.py文件
-
-![image-20210109233245533](README.assets/image-20210109233245533.png)
 
 
-
-### 选择基础练习
-
-![image-20210109233439753](README.assets/image-20210109233439753.png)
+![image-20210109234210039](README.assets/image-20210109234210039.png)
 
 
 
-### 其他方式
-
-![image-20210109231230964](README.assets/image-20210109231230964.png)
-
-
+![image-20210109234245704](README.assets/image-20210109234245704.png)
 
