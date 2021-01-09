@@ -12,11 +12,11 @@ finally:
 """
 
 Test_File = open(r"./测试文件IO.txt", mode='w+', encoding='utf8')
-Test_File.write("写入测试数据  /// 不保留 \n//测试住宿///未消失  \n  ///删除 \n  //保留 \n  嘿嘿//保留  \n  嘿嘿/// 消失\n")
+Test_File.write("写入测试数据  *** 123 \n**测试***123  \n  /**？？ \n  //## \n  嘿嘿**！！  \n  嘿嘿*** gg\n")
 Test_File.close()
 
 with open(r"./测试文件IO.txt", mode='a+', encoding='utf8') as Test_File:
-    Test_File.write("写入测试数据 //保留\n //测试住宿///未消失  \n  ///删除 \n  //保留 \n  嘿嘿//保留  \n  嘿嘿/// 消失\n")
+    Test_File.write("写入测试数据  *** 123 \n**测试***123  \n  /**？？ \n  //## \n  嘿嘿**！！  \n  嘿嘿*** gg\n")
 
 with open(r"./测试文件IO.txt", mode='r', encoding='utf8') as Test_File:
     Test_Str = Test_File.read(1024)
@@ -27,10 +27,10 @@ with open(r"./测试文件IO.txt", mode='r', encoding='utf8') as Test_File:
 #     Test_Str = str(Test_File.readline())
 #     print("line_num:", line_num)
 #     print(Test_Str, len(Test_Str))
-#     target = Test_Str.find("//", 0, len(Test_Str))
+#     target = Test_Str.find("**", 0, len(Test_Str))
 #     print(target)
 #     if target != -1:
-#         if Test_Str[target + 2] == "/":  # 需要处理
+#         if Test_Str[target + 2] == "*":  # 需要处理
 #             New_Str = str(Test_Str[:target])
 #             print(New_Str, len(New_Str))
 #
@@ -60,10 +60,10 @@ with open(r"./测试文件IO.txt", mode='rb+') as Test_File:
             break
         # print("line_num:", line_num)
         # print(Test_Str, len(Test_Str.encode("utf-8")))
-        target = Test_Str.find("//", 0, len(Test_Str))
+        target = Test_Str.find("**", 0, len(Test_Str))
         # print(target)
         if target != -1:  # 有找到 //
-            if Test_Str[target + 2] == "/":  # 需要处理
+            if Test_Str[target + 2] == "*":  # 需要处理
                 New_Str = str(Test_Str[:target])  # 只保留 // 前面的数据
                 New_Str += (" " * (len(Test_Str.encode("utf-8")) - len(New_Str.encode("utf-8")) - 1))  # 加入空格填充被清除的数据
                 # print(New_Str, len(New_Str.encode("utf-8")))
