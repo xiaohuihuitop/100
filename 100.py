@@ -65,12 +65,11 @@ with open(r"./测试文件IO.txt", mode='rb+') as Test_File:
         if target != -1:  # 有找到 //
             if Test_Str[target + 2] == "/":  # 需要处理
                 New_Str = str(Test_Str[:target])  # 只保留 // 前面的数据
+                New_Str += (" " * (len(Test_Str.encode("utf-8")) - len(New_Str.encode("utf-8")) - 1))  # 加入空格填充被清除的数据
                 # print(New_Str, len(New_Str.encode("utf-8")))
 
                 Test_File.seek(line_num)  # 移动到该行的起始位置
-                Test_File.write(  # 写入数据和空格 如果不写入空格是没有效果的
-                    (New_Str + " " * (len(Test_Str.encode("utf-8")) - len(New_Str.encode("utf-8")) - 1)).encode("utf-8")
-                )
+                Test_File.write(New_Str.encode("utf-8"))  # 写入新数据
 
                 # 测试  encode前后 Str长度差异 ---> 双倍 并且 没有计算 空格？
                 # print(len(Test_Str.encode("utf-8")) - len(New_Str.encode("utf-8")) - 1 + len(New_Str))
