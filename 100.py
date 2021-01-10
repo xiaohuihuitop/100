@@ -18,7 +18,7 @@ def File_Scan(file_dir):
         # print(files)
         for file in files:
             file_name = root + "\\" + file
-            if os.path.splitext(file_name)[-1] == ".py":
+            if os.path.splitext(file_name)[-1] == ".py":  # 该函数会将当前路径分割为2个 第一个是路径去掉后缀的部分, 第二个是文件后缀
                 return_list.append(file_name)
 
     return return_list
