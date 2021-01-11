@@ -7,6 +7,9 @@ for root, dirs, files in os.walk(file_dir):
         # print(files)  # 当前路径下所有非目录子文件
 一共有多少级目录 就会循环多少次
 root 会逐渐深入目录  然后加上 files 中的文件名 就可以得到所有的文件了
+
+列表推导式：
+File_List = [(root + "\\" + fil) for root, dirs, files in os.walk(os.getcwd()) for fil in files]
 """
 
 
